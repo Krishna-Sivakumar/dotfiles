@@ -1,0 +1,8 @@
+#!/bin/dash
+
+# Author: Krishna Sivakumar (2021)
+
+find ~/repos/wallpapers -name '*.jpg' -or -name '*.png' -or -name '*.jpeg' | rofi -dmenu -keep-right -i -p "wallpaper" > ~/.cache/wallpaper;
+img_dir=$(cat ~/.cache/wallpaper &);
+nitrogen --set-scaled $img_dir ;
+wal --saturate 1.0 -i "$img_dir";

@@ -1,0 +1,16 @@
+#!/bin/dash
+
+search_dir=~/repos/wallpapers;
+
+if [ $# -ne 0 ]; then
+	echo $* > ~/.cache/wallpaper;
+else
+	find $search_dir -name '*.jpg' -or -name '*.png' -or -name '*.jpeg' | shuf -n 1 > ~/.cache/wallpaper;
+fi
+
+
+img_dir=$(cat ~/.cache/wallpaper);
+
+nitrogen --set-scaled $img_dir;
+
+wal --saturate 1.0 -i "$img_dir";

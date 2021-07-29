@@ -1,0 +1,10 @@
+#!/bin/dash
+
+# Author: Krishna Sivakumar (2021)
+
+picom -b --experimental-backends;
+sudo powertop --auto-tune;
+sudo tlp start;
+
+theme-init;
+redshift -P -O 3500;
